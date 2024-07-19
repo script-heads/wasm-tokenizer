@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WASM Tokenizer - cl100k</title>
+  <script src="tokenizer.js"></script>
+</head>
+
+<body>
+  <textarea id="input" style="width:100%;height:200px;"></textarea>
+  <div>Tokens: <span id="value">0</span></div>
+  <div>Time: <span id="time">0</span></div>
+  <div>Decode <input type="checkbox" id="decode"/></div>
+  <pre id="result"></pre>
+  <script>
+    const inputRef = document.querySelector('#input')
+    const valueRef = document.querySelector('#value')
+    const timeRef = document.querySelector('#time')
+    const decodeRef = document.querySelector('#decode')
+    const resultRef = document.querySelector('#result')
+    fetch('cl100k_base.bin')
+      .then(response => response.arrayBuffer())
+      .then(arrayBuffer => {
+        const uint8Array = new Uint8Array(arrayBuffer);
+        wasmTokenizer().then((TokenizerModule) => {
+
+          // Create a vector from the Uint8Array
+          const vector = new TokenizerModule.VectorUint8();
+          for (let i = 0; i < uint8Array.length; i++) {
+            vector.push_back(uint8Array[i]);
+          }
+
+          // Create the tokenizer using the vector
+          const tokenizer = new TokenizerModule.Tokenizer(vector);
+          // Clean up the vector
+          vector.delete();
+
+          inputRef.addEventListener('input', (e) => {
+            resultRef.innerHTML = ''
+            const text = e.target.value
+            const startTime = performance.now();
+            const tokens = tokenizer.encode(text);
+            window.a = tokens
+            const endTime = performance.now();
+            const timeTaken = endTime - startTime;
+            valueRef.innerHTML = tokens.size()
+            timeRef.innerHTML = timeTaken.toFixed(2) + ' ms'
+            if (decodeRef.checked) {
+              resultRef.innerHTML = tokenizer.decode(tokens);
+            }
+          })
+        });
+      });
+  </script>
+</body>
+
+</html>

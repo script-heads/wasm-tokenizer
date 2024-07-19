@@ -1,0 +1,16 @@
+{
+  "name": "wasm-tokenizer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tokenizer.cpp",
+  "scripts": {
+    "start": "node ./scripts/server",
+    "tobin": "node ./scripts/tiktok_to_bin",
+    "build": "emcc --bind -O3 -s WASM=1 -s ALLOW_MEMORY_GROWTH=1 -s MODULARIZE=1 -s EXPORT_NAME=\"wasmTokenizer\" src/tokenizer.cpp -o dist/tokenizer.js"
+  },
+  "author": "Ilya Trikoz",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.19.2"
+  }
+}

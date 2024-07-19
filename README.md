@@ -8,7 +8,7 @@ wasm-tokenizer is a high-performance tokenizer written in C++ and compiled to We
 - Compatible with browser and Node.js environments
 - Highly efficient encoding and decoding of tokens
 - Includes a tool to convert tiktoken file format to binary, reducing the size of cl100k token database by 60%
-- Developed to enhance performance for token calculation on the frontend for [GPTunnel](https://gptunnel.com), an AI Aggregator by ScriptHeads
+- Developed to enhance performance for token calculation on the frontend for [GPTunneL](https://gptunnel.com?utm_source=github&utm_campaign=wasm-tokenizer), an AI Aggregator by ScriptHeads
 
 ## Performance
 
@@ -88,7 +88,7 @@ wasm-tokenizer includes a tool to convert tiktoken file format to binary. This c
 
 ## Real-world Application
 
-You can see wasm-tokenizer in action on [GPTunnel](https://gptunnel.com), where it's used to power token calculations for various LLM models. Visit GPTunnel to experience the performance benefits of wasm-tokenizer and explore some of the most powerful language models available.
+You can see wasm-tokenizer in action on [GPTunneL](https://gptunnel.com?utm_source=github&utm_campaign=wasm-tokenizer), where it's used to power token calculations for various LLM models. Visit GPTunneL to experience the performance benefits of wasm-tokenizer and explore some of the most powerful language models available.
 
 ## Contributing
 
@@ -105,11 +105,11 @@ We welcome contributions to wasm-tokenizer! If you'd like to contribute, please 
  - npm package
  - add all databases
  - add chat encode support
- 
+
 ## License
 
 This project is licensed under the MIT License.
 
 ## Acknowledgements
 
-wasm-tokenizer was developed by ScriptHeads for use in the GPTunnel AI Aggregator. We thank the open-source community for their continuous support and contributions.
+wasm-tokenizer was developed by ScriptHeads for use in the [GPTunneL](https://gptunnel.com?utm_source=github&utm_campaign=wasm-tokenizer) AI Aggregator. We thank the open-source community for their continuous support and contributions.

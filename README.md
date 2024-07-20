@@ -2,13 +2,17 @@
 
 wasm-tokenizer is a high-performance tokenizer written in C++ and compiled to WebAssembly (WASM) for use in both browser and Node.js environments. It provides efficient encoding and decoding of tokens, making it the most performant tokenizer in its class.
 
+## Thanks
+
+Thanks to Claude Sonnet 3.5! In fact, most of the work on this library was done by Anthropic AI on [GPTunneL](https://gptunnel.com?utm_source=github&utm_campaign=wasm-tokenizer), and now this library is used as the core functionality for calculating service tokens. 🤯
+
 ## Features
 
 - Written in C++ and compiled to WebAssembly
 - Compatible with browser and Node.js environments
 - Highly efficient encoding and decoding of tokens
 - Includes a tool to convert tiktoken file format to binary, reducing the size of cl100k token database by 60%
-- Developed to enhance performance for token calculation on the frontend for [GPTunneL](https://gptunnel.com?utm_source=github&utm_campaign=wasm-tokenizer), an AI Aggregator by ScriptHeads
+- Developed to enhance performance for token calculation on the frontend for GPTunneL, an AI Aggregator by ScriptHeads
 
 ## Performance
 

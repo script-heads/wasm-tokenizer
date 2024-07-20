@@ -20,7 +20,7 @@ wasm-tokenizer outperforms other popular tokenizers such as gpt-tokenizer and ti
 ### 10,000 Tokens
 ![10k tokens performance](https://sh-bucket.storage.yandexcloud.net/blog/6699f7d1346a2a0001061ddb.webp)
 
-### 1,000,000 Tokens
+### 1,500,000 Tokens
 ![1m tokens performance](https://sh-bucket.storage.yandexcloud.net/blog/6699f7e0346a2a0001061ddc.webp)
 
 All tests were run on a MacBook M1 Pro using Node.js v21.6.2, with 1000 iterations to calculate average time.
